@@ -35,5 +35,10 @@ public class HelloWorldController {
 	public HelloWorldBean helloworldbeanquality(@PathVariable String name,String quality){
 		return new HelloWorldBean(name,quality);
 	}
+	
+	@GetMapping(path="/user/experiment")
+	public String experiment(){
+		return "<h1> This is a Experiment.delete it after use</h1>";
+	}
 
 }
