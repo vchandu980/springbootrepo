@@ -50,5 +50,10 @@ public class HelloWorldController {
 	public String githubexpo(){
 		return "created a new github repository";
 	}
+	
+	@GetMapping(path = "users/dummy")
+	public String dummyexpo(){
+		return "created a new dummy route";
+	}
 
 }
