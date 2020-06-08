@@ -45,5 +45,10 @@ public class HelloWorldController {
 	public String experimental2(){
 		return "<h2> This  is experimental git branch</h1>";
 	}
+	
+	@GetMapping(path = "/users/github/expo")
+	public String githubexpo(){
+		return "created a new github repository";
+	}
 
 }
