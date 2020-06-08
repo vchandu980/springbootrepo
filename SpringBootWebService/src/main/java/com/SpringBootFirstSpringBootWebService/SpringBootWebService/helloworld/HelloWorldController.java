@@ -40,5 +40,10 @@ public class HelloWorldController {
 	public String experiment(){
 		return "<h1> This is a Experiment.delete it after use</h1>";
 	}
+	
+	@GetMapping(path = "/users/expo")
+	public String experimental2(){
+		return "<h2> This  is experimental git branch</h1>";
+	}
 
 }
