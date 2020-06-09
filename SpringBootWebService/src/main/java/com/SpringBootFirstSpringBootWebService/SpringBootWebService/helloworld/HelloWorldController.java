@@ -36,6 +36,9 @@ public class HelloWorldController {
 		return new HelloWorldBean(name,quality);
 	}
 	
-	
+	@GetMapping(path = "/user/song")
+	public String Helloworldsong(){
+		return " hello world song";
+	}
 
 }
