@@ -36,24 +36,6 @@ public class HelloWorldController {
 		return new HelloWorldBean(name,quality);
 	}
 	
-	@GetMapping(path="/user/experiment")
-	public String experiment(){
-		return "<h1> This is a Experiment.delete it after use</h1>";
-	}
-
-	@GetMapping(path = "/users/expo")
-	public String experimental2(){
-		return "<h2> This  is experimental git branch</h1>";
-	}
 	
-	@GetMapping(path = "/users/github/expo")
-	public String githubexpo(){
-		return "created a new github repository";
-	}
-	
-	@GetMapping(path = "users/dummy")
-	public String dummyexpo(){
-		return "created a new dummy route";
-	}
 
 }
