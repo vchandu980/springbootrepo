@@ -10,7 +10,9 @@ public class User {
 		this.name = name;
 		this.dob = dob;
 	}
-
+	public User(){
+		
+	}
 
 	private int id;
 	private String name;
