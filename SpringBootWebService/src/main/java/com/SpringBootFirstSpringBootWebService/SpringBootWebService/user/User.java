@@ -41,7 +41,9 @@ public class User {
 		this.ListOfPosts = ListOfPosts;
 		this.numberOfPosts = numberOfPosts;
 	}
-
+	public User(){
+		
+	}
 
 	private int id;
 	

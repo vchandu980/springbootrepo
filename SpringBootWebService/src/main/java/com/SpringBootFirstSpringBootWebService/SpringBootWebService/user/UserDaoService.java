@@ -33,11 +33,13 @@ public class UserDaoService {
 	
 	
 	static{
+
 		users.add(new User(1,"chandra", new Date(),posts1,2));
 		users.add(new User(2,"pavan",new Date(),posts2,2));
 		users.add(new User(3,"brahmam",new Date(),posts3,2));
+
 	}
-	private static int usersCount = 3;
+	private static int usersCount = 4;
 
 	public List<User> findAll(){
 		return users;

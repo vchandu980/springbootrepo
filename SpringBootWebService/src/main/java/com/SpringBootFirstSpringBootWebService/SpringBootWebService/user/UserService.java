@@ -6,9 +6,14 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.ResponseEntity.BodyBuilder;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,6 +35,7 @@ public class UserService {
 	@GetMapping(path="/users/{id}")//if we were able to find the resource then fetch it from database and return else return Http 404 error telling that the resource is not found
 	public User getSpecificUser(@PathVariable int id){
 		User user = service.findOne(id);
+
 		if(user==null){
 			throw new UserNotFoundException("id - "+id+" is not found");
 		}
@@ -77,6 +83,22 @@ public class UserService {
 		}
 		
 	}
+
+		if(user ==null){
+			throw new UserNotFoundException("id: "+id);
+		}
+		return user;
+	}
+	
+	@PostMapping(path="/users")
+	public ResponseEntity SaveUser(@RequestBody User user){
+		 User savedUser = service.save(user);
+		
+		URI Location =  ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(savedUser.getId()).toUri();
+		return ResponseEntity.created(Location).build();
+	}
+
+
 	
 
 }
